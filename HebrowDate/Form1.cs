@@ -125,15 +125,22 @@ namespace HebrowDate
             if (monthDay == "יום שלשים")
             {
                 int monthIndex = comboBox_month.SelectedIndex;
-                //switch (monthDayIndex)
-                //{
-                //    case 14:
-                //        month = "תשרי";
-                //        break;
-                //    default:
-                //        month = comboBox_month.;
-                //}
-                fullQuery = $"ביום שלשים בשבת {monthDay} לחודש {month} שהוא ראש חודש{year} לבריאת העולם";
+                int indexToJmp = 0;
+                switch (monthIndex)
+                {
+                    case 5:
+                        indexToJmp = 4; 
+                        break;
+                    case 13:
+                        indexToJmp = -13;
+                        break;
+                    default:
+                        indexToJmp = 2;
+                        break;
+                }
+                string newChodesh = Months[monthIndex + indexToJmp];
+            
+                fullQuery = $"ב{dayOfWeek} בשבת יום שלשים לחודש {month} שהוא ראש חודש {newChodesh} שנת {year} לבריאת העולם";
             }
             else
             {
