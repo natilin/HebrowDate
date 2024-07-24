@@ -132,7 +132,7 @@ namespace HebrowDate
                         indexToJmp = 4; 
                         break;
                     case 13:
-                        indexToJmp = -13;
+                        indexToJmp = -12;
                         break;
                     default:
                         indexToJmp = 2;
