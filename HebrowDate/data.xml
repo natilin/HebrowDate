@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Queries>
+  <Query>
+    <Day>שני</Day>
+    <DayMonth>14</DayMonth>
+    <Month>כסלו</Month>
+    <Year>תשפ"ו</Year>
+    <Result>בשני בשבת ארבעה עשר יום לירח כסלו שנת חמשת אלפים ושבע מאות ושמנים ושש לבריאת העולם</Result>
+  </Query>
+  <Query>
+    <Day>ראשון</Day>
+    <DayMonth>16</DayMonth>
+    <Month>מרחשון</Month>
+    <Year>תשפ"ה</Year>
+    <Result>באחד בשבת ששה עשר יום לירח מרחשון שנת חמשת אלפים ושבע מאות ושמנים וחמש לבריאת העולם</Result>
+  </Query>
+</Queries>
