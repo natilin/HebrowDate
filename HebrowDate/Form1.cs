@@ -38,6 +38,23 @@ namespace HebrowDate
             {29, "תשעה ועשרים יום"},
             {30, "יום שלשים"}
         };
+        public Dictionary<int, string>  Months = new Dictionary<int, string>
+        {
+            {1, "תשרי"},
+            {2, "מרחשון"},
+            {3, "כסלו"},
+            {4, "טבת"},
+            {5, "שבט"},
+            {6, "אדר"},
+            {7, "אדר הראשון"},
+            {8, "אדר השני"},
+            {9, "ניסן"},
+            {10, "אייר"},
+            {11, "סיון"},
+            {12, "תמוז"},
+            {13, "אב"},
+            {14, "אלול"}
+        };
         public Dictionary<string, string> Years = new Dictionary<string, string>
         {
             {"תשפ\"ד", "חמשת אלפים ושבע מאות ושמנים וארבע"},
@@ -74,20 +91,12 @@ namespace HebrowDate
                 comboBox_month_days.Items.Add(i);
             }
 
-            comboBox_month.Items.Add("תשרי");
-            comboBox_month.Items.Add("מרחשון");
-            comboBox_month.Items.Add("כסלו");
-            comboBox_month.Items.Add("טבת");
-            comboBox_month.Items.Add("שבט");
-            comboBox_month.Items.Add("אדר");
-            comboBox_month.Items.Add("אדר הראשון");
-            comboBox_month.Items.Add("אדר השני");
-            comboBox_month.Items.Add("ניסן");
-            comboBox_month.Items.Add("אייר");
-            comboBox_month.Items.Add("סיון");
-            comboBox_month.Items.Add("תמוז");
-            comboBox_month.Items.Add("אב");
-            comboBox_month.Items.Add("אלול");
+            //add months
+            List<string> months = new List<string>(Months.Values);
+            foreach (string month in months)
+            {
+                comboBox_month.Items.Add(month);
+            }
 
 
             //add years
@@ -115,7 +124,15 @@ namespace HebrowDate
 
             if (monthDay == "יום שלשים")
             {
-                List<string> roshChodesh = new List<string> { "תשרי", "מרחשון", "כסלו", "טבת", "שבט", "אדר", "ניסן", "אייר", "סיון", "תמוז", "אב", "אלול" };
+                int monthIndex = comboBox_month.SelectedIndex;
+                //switch (monthDayIndex)
+                //{
+                //    case 14:
+                //        month = "תשרי";
+                //        break;
+                //    default:
+                //        month = comboBox_month.;
+                //}
                 fullQuery = $"ביום שלשים בשבת {monthDay} לחודש {month} שהוא ראש חודש{year} לבריאת העולם";
             }
             else
@@ -142,7 +159,7 @@ namespace HebrowDate
         {
             string query = CreateQuery();
             writeTofile(comboBox_days.Text, comboBox_month_days.Text, comboBox_month.Text, comboBox_year.Text, query);
-            MessageBox.Show("הפרטים נשמרו בהצלחה");
+            MessageBox.Show(query);
 
         }
     }
