@@ -165,7 +165,7 @@ namespace HebrowDate
         private void button1_Click_1(object sender, EventArgs e)
         {
             string query = CreateQuery();
-            writeTofile(comboBox_days.Text, comboBox_month_days.Text, comboBox_month.Text, comboBox_year.Text, query);
+            writeTofile(comboBox_days.Text, comboBox_month_days.Text, comboBox_month.Text, comboBox_year.Text,  query);
             MessageBox.Show(query);
 
         }
